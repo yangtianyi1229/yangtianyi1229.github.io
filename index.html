@@ -651,6 +651,15 @@ nav .nav-back:hover{color:var(--green)}
 body.in-case.show-back nav .name{display:none}
 body.in-case.show-back nav .nav-back.on{display:inline-flex;animation:bkin .25s ease}
 @keyframes bkin{from{opacity:0;transform:translateX(-4px)}to{opacity:1;transform:none}}
+
+/* Gallery everywhere: no mask on the moving layer (WebKit stops painting wide masked layers); fade edges with overlays instead */
+.drift{-webkit-mask-image:none!important;mask-image:none!important;position:relative}
+.drift-track{will-change:auto}
+.drift-wrap{position:relative}
+.drift-wrap::before,.drift-wrap::after{content:"";position:absolute;top:0;bottom:0;width:6vw;z-index:2;pointer-events:none}
+.drift-wrap::before{left:calc(50% - 50vw);background:linear-gradient(90deg,var(--drift-bg,var(--paper)),transparent)}
+.drift-wrap::after{right:calc(50% - 50vw);background:linear-gradient(270deg,var(--drift-bg,var(--paper)),transparent)}
+@media (hover:none){.drift-wrap::before,.drift-wrap::after{display:none}}
 </style>
 </head>
 <body>
@@ -715,7 +724,7 @@ body.in-case.show-back nav .nav-back.on{display:inline-flex;animation:bkin .25s 
     <section class="grp" id="early">
       <div class="grp-h"><h3>Earlier work</h3><span>2024–2025</span></div>
       <p class="grp-note">Projects from my BA in User Experience Design at UAL, including my two graduation projects.</p>
-      <div class="drift" aria-label="Earlier projects"><div class="drift-track"><div class="cards c4 drift-set">
+      <div class="drift-wrap"><div class="drift" aria-label="Earlier projects"><div class="drift-track"><div class="cards c4 drift-set">
         <a class="card" href="#tapcare">
           <div class="pic"><img src="img/tapcare-hero.jpg" alt="Tap Care app screens: taxi booking, repair booking and reminders"></div>
           <div class="cap"><span class="ctag">Service design</span><h4>Tap Care</h4><span class="tagline">2025</span><p class="desc">NFC cards that let older adults call a taxi or book a repair with one tap.</p></div>
@@ -736,7 +745,7 @@ body.in-case.show-back nav .nav-back.on{display:inline-flex;animation:bkin .25s 
           <div class="pic"><img src="img/signguage-hero.jpg" alt="Rendered figure wearing the sign-language glove"></div>
           <div class="cap"><span class="ctag">Assistive tech</span><h4>Signguage</h4><span class="tagline">2024</span><p class="desc">Wearables that translate between sign language and speech.</p></div>
         </a>
-      </div></div></div>
+      </div></div></div></div>
     </section>
 
     <section class="grp" id="experience">
