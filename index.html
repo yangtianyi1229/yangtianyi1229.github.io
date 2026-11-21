@@ -650,8 +650,8 @@ body.in-case.show-back nav .nav-back.on{display:inline-flex;animation:bkin .25s 
 @keyframes bkin{from{opacity:0;transform:translateX(-4px)}to{opacity:1;transform:none}}
 
 /* Gallery everywhere: no mask on the moving layer (WebKit stops painting wide masked layers); cards simply run to the screen edge */
-.drift{-webkit-mask-image:none!important;mask-image:none!important}
-.drift-track{will-change:auto}
+.drift.native{-webkit-mask-image:none!important;mask-image:none!important}
+.drift.native .drift-track{will-change:auto}
 </style>
 </head>
 <body>
@@ -1386,6 +1386,8 @@ st.addEventListener('pointerdown',e=>{sx=e.clientX;swiped=false});st.addEventLis
 /* ---------- Earlier work drift: slow auto-scroll, drag / swipe / trackpad to move ---------- */
 /* Phones: native scrolling that stops at the ends; a slow drift while untouched, easing back to the start at the end */
 (()=>{const d=document.querySelector('.drift');if(!d)return;
+  // touch screens and the WeChat browser get plain native scrolling (WebKit there stops painting the moving loop); desktop browsers keep the endless drift
+  if(!(matchMedia('(hover:none)').matches||/MicroMessenger|WeChat/i.test(navigator.userAgent)))return;
   d.classList.add('native');if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   const SPEED=24;let acc=0,last=0,vis=false,quiet=0,back=false;
   const hush=ms=>{quiet=performance.now()+ms};
