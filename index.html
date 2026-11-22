@@ -679,13 +679,14 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
 html[lang="zh-CN"] .hero .pf-t{max-width:17em}
 
 /* First screen, layout L1: centred, with clear space between the groups */
-.hero .avail{margin-bottom:34px}
+.hero .avail{margin-bottom:30px}
 .hero .sub{margin-top:26px}
 .hero .meta{margin-top:22px;opacity:.85}
 .hero .ctas{margin-top:34px}
 .hero .copy{padding-bottom:72px}
 .hero .proof{padding-top:26px}
 @media (max-width:860px){.hero .avail{margin-bottom:24px}.hero .copy{padding-bottom:40px}}
+@media (min-width:861px) and (max-height:820px){.hero{height:auto;min-height:calc(100vh - 52px)}.hero .copy{padding-top:32px;padding-bottom:52px}.hero .avail{margin-bottom:22px}.hero .ctas{margin-top:28px}}
 </style>
 </head>
 <body>
@@ -703,6 +704,7 @@ html[lang="zh-CN"] .hero .pf-t{max-width:17em}
     <canvas id="lat" aria-hidden="true"></canvas>
     <div class="copy">
       <p class="avail"><i></i>Open to product management, product planning, UX and service design roles · Full-time from May 2027</p>
+      <p class="hi">Hi, I'm Lisa.</p>
       <h1>Tianyi Yang</h1>
       <p class="sub">I work on <span>product strategy and service design</span>, from user research through to delivery.</p>
       <ul class="meta"><li>MS Design Technology, Cornell University</li><li>BA (Hons) UX Design, UAL</li><li>3 industry internships</li></ul>
@@ -1584,6 +1586,8 @@ document.getElementById('lang')?.addEventListener('click',()=>set(cur==='zh'?'en
 let start='en';try{start=new URLSearchParams(location.search).get('lang')||localStorage.getItem('lang')||'en'}catch(_){}
 if(start==='zh')set('zh');})();
 </script>
+
+
 
 
 
