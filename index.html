@@ -19,8 +19,14 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a1410'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23c2a978'/%3E%3C/svg%3E">
 <meta name="theme-color" content="#f7f5f0">
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@500;600&display=swap">
+<link rel="preload" href="fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+/* Fonts are served from this site (no Google request, so the page also opens where Google is blocked). Chinese files hold only the characters the site uses. */
+@font-face{font-family:"Inter Tight";src:url(fonts/inter-tight.woff2) format("woff2");font-weight:300 600;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Geist Mono";src:url(fonts/geist-mono.woff2) format("woff2");font-weight:400 500;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2212}
+@font-face{font-family:"Noto Sans SC";src:url(fonts/noto-sans-sc.woff2) format("woff2");font-weight:300 500;font-display:swap}
+@font-face{font-family:"Noto Serif SC";src:url(fonts/noto-serif-sc.woff2) format("woff2");font-weight:500 600;font-display:swap}
+
 /* Layout: a full-screen spring lattice as the base layer with a centered name; the work sheet and the closing sheet slide over it. Work is a calm two-column grid of same-size white covers with captions underneath. Case studies open in place: centered titles, narrow reading column, wide images. Light only, by choice. */
 :root{
   color-scheme:light;
@@ -652,7 +658,7 @@ body.in-case.show-back nav .nav-back.on{display:inline-flex;animation:bkin .25s 
 .drift.native .drift-track{will-change:auto}
 
 /* Chinese pages: Latin letters and numbers inside Chinese headings stay at the regular weight used by the English headings, not bold */
-@font-face{font-family:"ZH Latin";src:url(https://fonts.gstatic.com/s/intertight/v9/NGSwv5HMAFg6IuGlBNMjxLsH8ahuQ2e8.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+20AC,U+2122,U+2212}
+@font-face{font-family:"ZH Latin";src:url(fonts/inter-tight.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+20AC,U+2122,U+2212}
 html[lang="zh-CN"] :is(h1,h2,h3,h4,.big){font-family:"ZH Latin","Noto Serif SC","Songti SC",serif;font-synthesis-weight:none;font-synthesis:none}
 html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.02em}
 </style>
@@ -689,23 +695,23 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
       <div class="hc-wrap">
         <div class="hcar"><div class="hc-track">
         <a class="hc-slide hc-sprout on" href="#sprout" style="--bg:#fefefe;--fg:#1c1c1a" aria-label="SPROUT case study">
-          <div class="hc-pic"><img src="img/sprout-hero.jpg" alt="SPROUT, a pink and white robot plant pot with googly eyes, holding white daisies"></div>
+          <div class="hc-pic"><img src="img/sprout-hero.webp" alt="SPROUT, a pink and white robot plant pot with googly eyes, holding white daisies"></div>
           <div class="hc-copy"><div class="hc-tags"><span class="hc-cat">Embodied AI · Consumer product</span></div><h4>SPROUT</h4><p class="line">A plant-care robot with a personality that seeks out light and expresses the plant's needs through its face and moods.</p><span class="more">Read the case study <i>→</i></span></div>
         </a>
         <a class="hc-slide hc-phase" href="#phase" style="--bg:#000;--fg:#f5f5f3" aria-label="PHASE case study" tabindex="-1">
-          <div class="hc-pic"><img src="img/phase-tile.jpg" alt="Rendered lattice cube of rigid compliant-mechanism cells"></div>
+          <div class="hc-pic"><img src="img/phase-tile.webp" alt="Rendered lattice cube of rigid compliant-mechanism cells"></div>
           <div class="hc-copy"><div class="hc-tags"><span class="hc-cat">Design tool · Research</span></div><h4>PHASE</h4><p class="line">A design tool for 3D-printed parts that move by bending rather than hinges, built on structures we printed and tested.</p><span class="more">Read the case study <i>→</i></span></div>
         </a>
         <a class="hc-slide hc-follower" href="#follower" style="--bg:#d2ccc7;--fg:#1c1c1a" aria-label="FOLLOWER case study" tabindex="-1">
-          <div class="hc-pic"><img src="img/fl-side.jpg" alt="FOLLOWER from the side: rows of black scales over the face, chains hanging from the headband"></div>
+          <div class="hc-pic"><img src="img/fl-side.webp" alt="FOLLOWER from the side: rows of black scales over the face, chains hanging from the headband"></div>
           <div class="hc-copy"><div class="hc-tags"><span class="hc-cat">Critical design · Wearable</span></div><h4>FOLLOWER</h4><p class="line">A wearable mask that translates other people's gaze into touch.</p><span class="more">Read the case study <i>→</i></span></div>
         </a>
         <a class="hc-slide hc-bf" href="#benefitflow" style="--bg:#14243f;--fg:#f3f1ec" aria-label="BenefitFlow, work in progress" tabindex="-1">
-          <div class="hc-pic"><img src="img/bf-hero.jpg" alt="Dot grid of therapist listings with four highlighted: 500+ options narrow to 4 that fit one patient"></div>
+          <div class="hc-pic"><img src="img/bf-hero.webp" alt="Dot grid of therapist listings with four highlighted: 500+ options narrow to 4 that fit one patient"></div>
           <div class="hc-copy"><div class="hc-tags"><span class="hc-badge"><i></i>In progress · Demo Day Dec 2026</span><span class="hc-cat">Health tech · Service design</span></div><h4>BenefitFlow</h4><p class="line">A service that helps patients secure insurance coverage for the therapist they need.</p><span class="more">See the work so far <i>→</i></span></div>
         </a>
         <a class="hc-slide hc-somnera" href="#somnera" style="--bg:#0b0c0e;--fg:#f3efe8" aria-label="Somnera, work in progress" tabindex="-1">
-          <div class="hc-pic"><img src="img/somnera-band.jpg" alt="Concept render: a glowing arch-shaped bedside lamp"></div>
+          <div class="hc-pic"><img src="img/somnera-band.webp" alt="Concept render: a glowing arch-shaped bedside lamp"></div>
           <div class="hc-copy"><div class="hc-tags"><span class="hc-badge"><i></i>In progress · updated Nov 2026</span><span class="hc-cat">Sleep tech · Hardware product</span></div><h4>Somnera</h4><p class="line">A contactless bedside sleep system that guides each night, from wind-down to wake-up.</p><span class="more">See the work so far <i>→</i></span></div>
         </a>
         </div></div>
@@ -721,23 +727,23 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
       <p class="grp-note">Projects from my BA in User Experience Design at UAL, including my two graduation projects.</p>
       <div class="drift-wrap"><div class="drift" aria-label="Earlier projects"><div class="drift-track"><div class="cards c4 drift-set">
         <a class="card" href="#tapcare">
-          <div class="pic"><img src="img/tapcare-hero.jpg" alt="Tap Care app screens: taxi booking, repair booking and reminders"></div>
+          <div class="pic"><img src="img/tapcare-hero.webp" alt="Tap Care app screens: taxi booking, repair booking and reminders"></div>
           <div class="cap"><span class="ctag">Service design</span><h4>Tap Care</h4><span class="tagline">2025</span><p class="desc">NFC cards that let older adults call a taxi or book a repair with one tap.</p></div>
         </a>
         <a class="card" href="#lumencord">
-          <div class="pic"><img src="img/lumencord-hero.jpg" alt="Lumencord: a deep blue core wrapped in hand-bent silver wire, hanging on a chain"></div>
+          <div class="pic"><img src="img/lumencord-hero.webp" alt="Lumencord: a deep blue core wrapped in hand-bent silver wire, hanging on a chain"></div>
           <div class="cap"><span class="ctag">Product design</span><h4>Lumencord</h4><span class="tagline">2025</span><p class="desc">An interactive pendant for long-distance relationships.</p></div>
         </a>
         <a class="card" href="#lumibot">
-          <div class="pic"><img src="img/lumibot-hero.jpg" alt="Lumibot, a small wooden robot on wheels, carrying a potted plant"></div>
+          <div class="pic"><img src="img/lumibot-hero.webp" alt="Lumibot, a small wooden robot on wheels, carrying a potted plant"></div>
           <div class="cap"><span class="ctag">Robotics · App</span><h4>Lumibot</h4><span class="tagline">2024</span><p class="desc">A small robot that moves potted plants into sunlight.</p></div>
         </a>
         <a class="card" href="#lezat">
-          <div class="pic"><img src="img/lezat-hero.jpg" alt="Wooden model of a waterside restaurant on a pier"></div>
+          <div class="pic"><img src="img/lezat-hero.webp" alt="Wooden model of a waterside restaurant on a pier"></div>
           <div class="cap"><span class="ctag">Service design · Business model</span><h4>Lezat</h4><span class="tagline">2024</span><p class="desc">A restaurant service and business model for a flooded Jakarta.</p></div>
         </a>
         <a class="card" href="#signguage">
-          <div class="pic"><img src="img/signguage-hero.jpg" alt="Rendered figure wearing the sign-language glove"></div>
+          <div class="pic"><img src="img/signguage-hero.webp" alt="Rendered figure wearing the sign-language glove"></div>
           <div class="cap"><span class="ctag">Assistive tech</span><h4>Signguage</h4><span class="tagline">2024</span><p class="desc">Wearables that translate between sign language and speech.</p></div>
         </a>
       </div></div></div></div>
@@ -793,7 +799,7 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
     <h1>SPROUT</h1>
     <p class="sub">A plant-care robot with a personality. It senses light and conveys the plant's condition through walking, facial expressions and moods rather than numbers.</p>
   </div>
-  <div class="band contain"><img src="img/sprout-hero.jpg" alt="SPROUT robot plant pot with daisies" loading="lazy"></div>
+  <div class="band contain"><img src="img/sprout-hero.webp" alt="SPROUT robot plant pot with daisies" loading="lazy"></div>
   <div class="wrap">
     <dl class="facts">
       <div><dt>My role</dt><dd>Led concept and direction; authored the behavior system; built the web interface and pixel face; hands-on build</dd></div>
@@ -820,18 +826,18 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
   <section class="wrap read chap"><span class="mono">03 · Behavior system</span><h2>A robot with a temperament</h2>
     <p>The same robot can take on four temperaments. Each is defined by a set of parameters: how sensitive it is, how fast it moves and which emotional states it can reach. Personality is therefore written into the control logic and shapes how the robot responds to its surroundings. I designed this model and the rules behind it.</p>
   </section>
-  <figure class="wrap fig gal g4 g-faces"><div class="gi"><img src="img/sp-face-professor.png" alt="Professor face: green eyes behind pixel glasses" loading="lazy"><b>Professor</b><span>Turns every status update into a botany lecture.</span></div><div class="gi"><img src="img/sp-face-gentle.png" alt="Gentle and Kind face: pink heart-shaped eyes and a smile" loading="lazy"><b>Gentle &amp; Kind</b><span>Soft-spoken and encouraging; melts into heart-eyes when cared for.</span></div><div class="gi"><img src="img/sp-face-tsundere.png" alt="Tsundere face: square yellow eyes and a pout" loading="lazy"><b>Tsundere</b><span>Pretends not to care. Secretly the most worried of all.</span></div><div class="gi"><img src="img/sp-face-hot.png" alt="Hot-tempered face: narrowed eyes and a frown" loading="lazy"><b>Hot-tempered</b><span>Poke it and it explodes: glaring eyes, zero patience.</span></div><figcaption>Professor, Gentle and Kind, Tsundere, Hot-tempered: the same robot, four ways of asking for help</figcaption></figure>
+  <figure class="wrap fig gal g4 g-faces"><div class="gi"><img src="img/sp-face-professor.webp" alt="Professor face: green eyes behind pixel glasses" loading="lazy"><b>Professor</b><span>Turns every status update into a botany lecture.</span></div><div class="gi"><img src="img/sp-face-gentle.webp" alt="Gentle and Kind face: pink heart-shaped eyes and a smile" loading="lazy"><b>Gentle &amp; Kind</b><span>Soft-spoken and encouraging; melts into heart-eyes when cared for.</span></div><div class="gi"><img src="img/sp-face-tsundere.webp" alt="Tsundere face: square yellow eyes and a pout" loading="lazy"><b>Tsundere</b><span>Pretends not to care. Secretly the most worried of all.</span></div><div class="gi"><img src="img/sp-face-hot.webp" alt="Hot-tempered face: narrowed eyes and a frown" loading="lazy"><b>Hot-tempered</b><span>Poke it and it explodes: glaring eyes, zero patience.</span></div><figcaption>Professor, Gentle and Kind, Tsundere, Hot-tempered: the same robot, four ways of asking for help</figcaption></figure>
 
   <section class="wrap read chap"><span class="mono">04 · Process</span><h2>Three prototypes, from standing still to walking</h2>
     <p>The first version was cardboard and hot glue, the second a set of 3D-printed shells, and the third a body that could walk. Once it walked, people began to treat it like a living thing.</p>
   </section>
-  <figure class="wrap fig gal g3"><div class="gi"><img src="img/sp-proto-1.jpg" alt="Prototype 1: a cardboard pot with a wheel" loading="lazy"><b>Prototype 1 · Cardboard</b><span>Cardboard and hot glue: a first pass at proportions.</span></div><div class="gi"><img src="img/sp-proto-2.jpg" alt="Prototype 2: a 3D-printed square pot, a laser-cut wood box and a rounded cylinder" loading="lazy"><b>Prototype 2 · Shells</b><span>Three ways to make the pot, side by side: 3D-printed, laser-cut wood, a rounded cylinder.</span></div><div class="gi"><img src="img/sp-proto-3.jpg" alt="Prototype 3: a grey printed shell above stepper motors and wiring" loading="lazy"><b>Prototype 3 · Toward walking</b><span>Stepper motors, tried and retired. The final build moved to geared DC motors and legs.</span></div></figure>
-  <figure class="wrap fig pair"><img src="img/sp-parts-photo.jpg" alt="Sprout's parts laid out: shell pieces, motors, batteries, sensors and boards" style="background:#fff;object-fit:contain" loading="lazy"><img src="img/sp-parts-cad.jpg" alt="Line drawing of Sprout's shell, pot and leg mechanism in CAD" style="background:#fff;object-fit:contain" loading="lazy"><figcaption>Parts, shell and leg mechanism, photographed and in CAD</figcaption></figure>
+  <figure class="wrap fig gal g3"><div class="gi"><img src="img/sp-proto-1.webp" alt="Prototype 1: a cardboard pot with a wheel" loading="lazy"><b>Prototype 1 · Cardboard</b><span>Cardboard and hot glue: a first pass at proportions.</span></div><div class="gi"><img src="img/sp-proto-2.webp" alt="Prototype 2: a 3D-printed square pot, a laser-cut wood box and a rounded cylinder" loading="lazy"><b>Prototype 2 · Shells</b><span>Three ways to make the pot, side by side: 3D-printed, laser-cut wood, a rounded cylinder.</span></div><div class="gi"><img src="img/sp-proto-3.webp" alt="Prototype 3: a grey printed shell above stepper motors and wiring" loading="lazy"><b>Prototype 3 · Toward walking</b><span>Stepper motors, tried and retired. The final build moved to geared DC motors and legs.</span></div></figure>
+  <figure class="wrap fig pair"><img src="img/sp-parts-photo.webp" alt="Sprout's parts laid out: shell pieces, motors, batteries, sensors and boards" style="background:#fff;object-fit:contain" loading="lazy"><img src="img/sp-parts-cad.webp" alt="Line drawing of Sprout's shell, pot and leg mechanism in CAD" style="background:#fff;object-fit:contain" loading="lazy"><figcaption>Parts, shell and leg mechanism, photographed and in CAD</figcaption></figure>
 
   <section class="wrap read chap"><span class="mono">05 · Outcome</span><h2>Into a real setting</h2>
     <p>We moved Sprout from the workbench to a library shelf for an afternoon, where it sensed, reacted and chatted with passers-by. People who had paid little attention to the screen interface started talking to the robot directly.</p>
   </section>
-  <figure class="wrap fig gal g3"><div class="gi"><img src="img/sp-field-1.jpg" alt="A teammate gives a thumbs down during a live test with soil on the table" loading="lazy"><b>Live test</b></div><div class="gi"><img src="img/sp-field-2.jpg" alt="A student uses a laptop next to Sprout on a library shelf" loading="lazy"><b>Field test · Uris Library</b></div><div class="gi"><img src="img/sp-field-3.jpg" alt="Sprout on a library shelf beside a laptop showing its face" loading="lazy"><b>On the shelf, mid-conversation</b></div></figure>
+  <figure class="wrap fig gal g3"><div class="gi"><img src="img/sp-field-1.webp" alt="A teammate gives a thumbs down during a live test with soil on the table" loading="lazy"><b>Live test</b></div><div class="gi"><img src="img/sp-field-2.webp" alt="A student uses a laptop next to Sprout on a library shelf" loading="lazy"><b>Field test · Uris Library</b></div><div class="gi"><img src="img/sp-field-3.webp" alt="Sprout on a library shelf beside a laptop showing its face" loading="lazy"><b>On the shelf, mid-conversation</b></div></figure>
 
   <section class="wrap read chap"><span class="mono">06 · Findings</span><h2>What we learned</h2>
     <div class="finds">
@@ -855,7 +861,7 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
     <h1>FOLLOWER</h1>
     <p class="sub">A critical design wearable that examines the experience of being watched. The mask blocks the wearer's sight and translates other people's gaze into touch on the face, so the wearer's movement is guided by how others look at them.</p>
   </div>
-  <div class="band band2"><img src="img/fl-side.jpg" alt="FOLLOWER from the side: rows of black scales over the face, chains hanging from the headband" loading="lazy"><img src="img/fl-back.jpg" alt="FOLLOWER from behind: silver chains and steel beads over long hair" loading="lazy"></div>
+  <div class="band band2"><img src="img/fl-side.webp" alt="FOLLOWER from the side: rows of black scales over the face, chains hanging from the headband" loading="lazy"><img src="img/fl-back.webp" alt="FOLLOWER from behind: silver chains and steel beads over long hair" loading="lazy"></div>
   <div class="wrap">
     <dl class="facts">
       <div><dt>My role</dt><dd>Concept and interaction logic; design language and form, from first sketch to final build</dd></div>
@@ -868,7 +874,7 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
     <p class="lead">Being watched quietly changes how we behave. Because it is so ordinary, its influence rarely gets noticed.</p>
     <p>A gaze always carries something: admiration, curiosity, judgment, even hostility. We live under strangers' eyes every day and rarely look back. Follower covers the wearer's eyes and turns the gazes aimed at them into touch. The longer someone looks from one direction, the more the scales on that side move against the cheek, and that becomes the wearer's only way to find a direction.</p>
   </section>
-  <figure class="wrap fig pair"><img src="img/fl-front.jpg" alt="FOLLOWER fully worn from the front: the scales cover the face entirely" style="background:#fff;object-fit:contain" loading="lazy"><img src="img/follower-scene.jpg" alt="Scenario test: the wearer stands in a studio while classmates watch" loading="lazy"><figcaption>Scenario test: bystanders become participants. Their gaze now steers where the wearer walks.</figcaption></figure>
+  <figure class="wrap fig pair"><img src="img/fl-front.webp" alt="FOLLOWER fully worn from the front: the scales cover the face entirely" style="background:#fff;object-fit:contain" loading="lazy"><img src="img/follower-scene.webp" alt="Scenario test: the wearer stands in a studio while classmates watch" loading="lazy"><figcaption>Scenario test: bystanders become participants. Their gaze now steers where the wearer walks.</figcaption></figure>
 
   <section class="wrap read chap"><span class="mono">02 · How it works</span><h2>From a glance to a touch</h2>
     <p>A camera detects who is looking at the wearer, from which direction and for how long. Each direction builds an attention score. The servo for that side lifts its strip of scales, which rise and fall against the cheek through a thin layer of fabric. The wearer feels the touch and moves, and new gazes follow the movement.</p>
@@ -883,9 +889,9 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
   <section class="wrap read chap"><span class="mono">03 · Process</span><h2>Veils and armor</h2>
     <p>Veils and armor share a double nature: they conceal and display, protect and discipline. Follower borrows from both. From annotated drawings to paper mock-ups and material tests, we built three full versions before the final one.</p>
   </section>
-  <figure class="wrap fig fig-narrow"><img src="img/fl-mood.jpg" alt="Mood board: a scale-armor mask, a beaded veil, a chain veil and a sculpted bodice" loading="lazy"><figcaption>Mood board: veils and armor, which conceal and display, protect and discipline.</figcaption></figure>
-  <figure class="wrap fig"><img src="img/follower-process.jpg" alt="Component study drawing, paper prototype, scale tests and three versions" loading="lazy"><figcaption>Component study, paper prototype, scale testing, three versions</figcaption></figure>
-  <figure class="wrap fig fig-mid"><img src="img/fl-explode.jpg" alt="Exploded CAD view of the headband, cam rails and scale strips" style="background:#fff" loading="lazy"><figcaption>Each scale strip rides a cam rail driven by a micro linear servo, modeled in Fusion 360 and 3D printed</figcaption></figure>
+  <figure class="wrap fig fig-narrow"><img src="img/fl-mood.webp" alt="Mood board: a scale-armor mask, a beaded veil, a chain veil and a sculpted bodice" loading="lazy"><figcaption>Mood board: veils and armor, which conceal and display, protect and discipline.</figcaption></figure>
+  <figure class="wrap fig"><img src="img/follower-process.webp" alt="Component study drawing, paper prototype, scale tests and three versions" loading="lazy"><figcaption>Component study, paper prototype, scale testing, three versions</figcaption></figure>
+  <figure class="wrap fig fig-mid"><img src="img/fl-explode.webp" alt="Exploded CAD view of the headband, cam rails and scale strips" style="background:#fff" loading="lazy"><figcaption>Each scale strip rides a cam rail driven by a micro linear servo, modeled in Fusion 360 and 3D printed</figcaption></figure>
 
   <section class="wrap read chap"><span class="mono">04 · Findings</span><h2>What we learned, from building it and from wearing it</h2>
     <div class="finds">
@@ -910,7 +916,7 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
     <h1>PHASE</h1>
     <p class="sub">A browser-based design tool for compliant mechanisms, 3D-printed structures that move through elastic deformation rather than hinges. It offers structures drawn from published research and validated through our own printing and testing, so designers can start from a proven geometry.</p>
   </div>
-  <div class="band" style="background:#000"><img src="img/phase-hero.jpg" alt="Rendered lattice cube built from stacked bistable cells" style="object-fit:contain" loading="lazy"></div>
+  <div class="band" style="background:#000"><img src="img/phase-hero.webp" alt="Rendered lattice cube built from stacked bistable cells" style="object-fit:contain" loading="lazy"></div>
   <div class="wrap">
     <dl class="facts">
       <div><dt>My role</dt><dd>Led modeling; set the specifications for the cell library; printed and physically tested the cells; produced the final renders</dd></div>
@@ -937,19 +943,19 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
   <section class="wrap read chap"><span class="mono">03 · The library</span><h2>Four families, four views each</h2>
     <p>Auxetic, chiral, bistable and flexure, and rigid. Every unit cell comes from published research; the arrays, dimensions and parameter sweeps are ours. In the tool, you pick a cell, drop it in, and start from a geometry that already works.</p>
   </section>
-  <figure class="wrap fig pair" style="background:none"><img src="img/ph-cells.jpg" alt="Grid of unit cells by family: auxetic, chiral, bistable and flexure, rigid; shown as unit cell, 2D, 3D and section cut" style="background:#000" loading="lazy"><img src="img/ph-tool.jpg" alt="The tool's library panel with the four cell families open" style="background:#000" loading="lazy"><figcaption>Left: the cell families as unit cell, 2D array, 3D array and section. Right: the same library inside the tool.</figcaption></figure>
+  <figure class="wrap fig pair" style="background:none"><img src="img/ph-cells.webp" alt="Grid of unit cells by family: auxetic, chiral, bistable and flexure, rigid; shown as unit cell, 2D, 3D and section cut" style="background:#000" loading="lazy"><img src="img/ph-tool.webp" alt="The tool's library panel with the four cell families open" style="background:#000" loading="lazy"><figcaption>Left: the cell families as unit cell, 2D array, 3D array and section. Right: the same library inside the tool.</figcaption></figure>
 
   <section class="wrap read chap"><span class="mono">04 · Testing</span><h2>A curve can say yes when the hand says no</h2>
     <p>To learn whether one geometry works: model it, print it, load it. Then change a strut diameter or wall thickness by a millimetre and do it all again. We also built each cell in Karamba and compared the simulated result against the printed one. They did not match, so the library is built on printed and tested cells, not simulated ones.</p>
     <p>Some cells that passed the load test still sprang back when pressed by hand. The curve confirms the mechanism exists; only pressing it tells you whether it holds. The library carries both.</p>
   </section>
-  <figure class="wrap fig"><img src="img/phase-measure.jpg" alt="Grasshopper definitions, a measured load-extension curve, and a simulated deflection in Karamba" style="background:#fff" loading="lazy"><figcaption>Material properties entered by hand, a measured load–extension curve, and the Karamba simulation it disagreed with</figcaption></figure>
-  <figure class="wrap fig"><img src="img/phase-fab.jpg" alt="Bistable and flexure cells: renders with wall thickness variations and a printed sheet" style="background:#000" loading="lazy"><figcaption>Bistable and flexure family: wall thickness swept from 0.5 mm to 2.0 mm</figcaption></figure>
+  <figure class="wrap fig"><img src="img/phase-measure.webp" alt="Grasshopper definitions, a measured load-extension curve, and a simulated deflection in Karamba" style="background:#fff" loading="lazy"><figcaption>Material properties entered by hand, a measured load–extension curve, and the Karamba simulation it disagreed with</figcaption></figure>
+  <figure class="wrap fig"><img src="img/phase-fab.webp" alt="Bistable and flexure cells: renders with wall thickness variations and a printed sheet" style="background:#000" loading="lazy"><figcaption>Bistable and flexure family: wall thickness swept from 0.5 mm to 2.0 mm</figcaption></figure>
 
   <section class="wrap read chap"><span class="mono">05 · Applications</span><h2>Choosing what goes inside</h2>
     <p>A soft gripper is one shape. What fills it is a choice, and different lattices give it different grips. A game controller's button feel is usually electronics; here it is geometry, and the lattice under the surface is what the thumb meets.</p>
   </section>
-  <figure class="wrap fig pair"><img src="img/ph-app-grip.jpg" alt="Lattice options for the inside of a soft gripper finger, in top, side and perspective views" style="background:#000" loading="lazy"><img src="img/ph-app-button.jpg" alt="Lattice option under a controller button, in top, side and perspective views" style="background:#000" loading="lazy"><figcaption>Proposed internal lattices for a soft gripper (left) and a controller button (right)</figcaption></figure>
+  <figure class="wrap fig pair"><img src="img/ph-app-grip.webp" alt="Lattice options for the inside of a soft gripper finger, in top, side and perspective views" style="background:#000" loading="lazy"><img src="img/ph-app-button.webp" alt="Lattice option under a controller button, in top, side and perspective views" style="background:#000" loading="lazy"><figcaption>Proposed internal lattices for a soft gripper (left) and a controller button (right)</figcaption></figure>
 
   <section class="wrap read chap"><span class="mono">06 · Findings</span><h2>What we learned</h2>
     <div class="finds">
@@ -973,7 +979,7 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
     <h1>BenefitFlow</h1>
     <p class="sub">A service that helps therapy patients secure insurance coverage for the therapist they need, starting with single case agreement (SCA) requests.</p>
   </div>
-  <div class="band" style="background:#14243f"><img src="img/bf-hero.jpg" alt="Dot grid of therapist listings with four highlighted: 500+ options narrow to 4 that fit one patient" style="object-fit:contain" loading="lazy"></div>
+  <div class="band" style="background:#14243f"><img src="img/bf-hero.webp" alt="Dot grid of therapist listings with four highlighted: 500+ options narrow to 4 that fit one patient" style="object-fit:contain" loading="lazy"></div>
   <div class="wrap">
     <dl class="facts"><div><dt>My role</dt><dd>User research, privacy and compliance, New York regulation research, market sizing, service blueprint, claims chain, experiment design and visual design</dd></div><div><dt>Team</dt><dd>Anushka, Bilal Munawar and Tianyi (Lisa) Yang, Team 410</dd></div><div><dt>Status</dt><dd>In progress, Fall 2026. Demo Day on December 4</dd></div></dl>
     <p class="wip-note">This is a project in progress. The case study will be completed after Demo Day.</p>
@@ -986,12 +992,12 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
   <section class="wrap read chap"><span class="mono">02 · Pivots</span><h2>Four business models in three months</h2>
     <p>We started by letting patients sell a denied claim, until contract law ruled it out. We moved to authorized appeals, then to reimbursement for out-of-network therapists, where competitors were already working. I set the privacy rules the whole time: billing data only, never therapy notes; an agreement with every provider; no ad trackers; data deleted when a case closes. I also drew the service blueprint so the team could see who does what at each step.</p>
   </section>
-  <figure class="wrap fig"><img src="img/bf-blueprint.jpg" alt="Service blueprint: six steps of one out-of-network visit, five roles, and one privacy rule per step" style="background:#fff" loading="lazy"><figcaption>Service blueprint I drew: six steps, five roles, one privacy rule per step</figcaption></figure>
+  <figure class="wrap fig"><img src="img/bf-blueprint.webp" alt="Service blueprint: six steps of one out-of-network visit, five roles, and one privacy rule per step" style="background:#fff" loading="lazy"><figcaption>Service blueprint I drew: six steps, five roles, one privacy rule per step</figcaption></figure>
 
   <section class="wrap read chap"><span class="mono">03 · Testing</span><h2>Is there really no therapist for her?</h2>
     <p>A New York rule says that if a plan has no in-network therapist available within 10 business days, it must approve one outside the network through a single case agreement. We listed 23 assumptions and tested the riskiest first. I led the experiment on supply: I created a realistic patient, a 15-year-old with ADHD from a Mandarin-speaking family who wants a male therapist in person, and searched each insurer's directory one need at a time. With Aetna, 500+ options fell to 4. With UnitedHealthcare, none.</p>
   </section>
-  <figure class="wrap fig"><img src="img/bf-exp2.jpg" alt="Experiment 2: Aetna directory results fall from 500+ to 4 as needs are added; other insurers show 3, 2, 1 and 0" style="background:#fff" loading="lazy"><figcaption>Experiment 2, which I led: one patient, five insurers</figcaption></figure>
+  <figure class="wrap fig"><img src="img/bf-exp2.webp" alt="Experiment 2: Aetna directory results fall from 500+ to 4 as needs are added; other insurers show 3, 2, 1 and 0" style="background:#fff" loading="lazy"><figcaption>Experiment 2, which I led: one patient, five insurers</figcaption></figure>
 
   <section class="wrap read chap"><span class="mono">04 · Where it stands</span><h2>Current focus: SCA requests for patients</h2>
     <p>An interview with a practice owner moved our customer, wedge and product toward detailed SCA requests built around one patient's needs. A practice with 15 therapists has signed on to the pilot, and the other two experiments are underway. Next: build the request packet for the pilot practice and present at Demo Day on December 4.</p>
@@ -1011,7 +1017,7 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
     <h1>Somnera</h1>
     <p class="sub">A sleep system of a bedside device and companion app that helps young people who stay up late build a consistent routine across the full night, from wind-down to wake-up. Radar detects presence and sleep state, with no wearables and no camera.</p>
   </div>
-  <div class="band" style="background:#0a0b0d"><img src="img/somnera-band.jpg" alt="Concept render: a glowing arch-shaped bedside lamp on a dark base" style="object-fit:contain;-webkit-mask-image:radial-gradient(min(30vw,320px) 48% at 50% 50%,#000 55%,transparent 100%);mask-image:radial-gradient(min(30vw,320px) 48% at 50% 50%,#000 55%,transparent 100%)" loading="lazy"></div>
+  <div class="band" style="background:#0a0b0d"><img src="img/somnera-band.webp" alt="Concept render: a glowing arch-shaped bedside lamp on a dark base" style="object-fit:contain;-webkit-mask-image:radial-gradient(min(30vw,320px) 48% at 50% 50%,#000 55%,transparent 100%);mask-image:radial-gradient(min(30vw,320px) 48% at 50% 50%,#000 55%,transparent 100%)" loading="lazy"></div>
   <div class="wrap">
     <dl class="facts"><div><dt>My role</dt><dd>Product lead: product definition, research, service flow, hardware selection</dd></div><div><dt>Context</dt><dd>Self-initiated. Cornell Specialization Project, with Jerry Lee (electrical engineering) and Sterling Zhang (data science)</dd></div><div><dt>Built with</dt><dd>TI IWRL6432 radar, ESP32-S3, light and speaker, companion app</dd></div><div><dt>Status</dt><dd>In progress since summer 2026. Updated November 2026</dd></div></dl>
     <p class="wip-note">This is a project in progress. What follows is the research and concept so far. User testing and a working prototype come next.</p>
@@ -1023,13 +1029,13 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
   <section class="wrap read chap"><span class="mono">02 · The gap</span><h2>Sleep devices start once you are asleep</h2>
     <p>I compared five bedside products, from Hatch and Sleepal to the Nest Hub. Most of them fade light and sound once you fall asleep, or run a timer. None of them reads tomorrow's calendar, and none acts while you lie awake past your bedtime. That moment is the one Somnera is built for.</p>
   </section>
-  <figure class="wrap fig"><img src="img/somnera-fig3.jpg" alt="Comparison table of bedside sleep devices: Sleepal, Hatch Sleep Clock, Wove, Dreamie, Nest Hub and Somnera" style="background:#0e0f12" loading="lazy"><figcaption>Competitor review, November 2026</figcaption></figure>
+  <figure class="wrap fig"><img src="img/somnera-fig3.webp" alt="Comparison table of bedside sleep devices: Sleepal, Hatch Sleep Clock, Wove, Dreamie, Nest Hub and Somnera" style="background:#0e0f12" loading="lazy"><figcaption>Competitor review, November 2026</figcaption></figure>
   <section class="wrap read chap"><span class="mono">03 · The concept</span><h2>One system for the whole night</h2>
     <p>A device that takes the late-night hour away by force gets switched off, so Somnera respects that hour and works on the rest of the night.</p>
     <ul class="phases"><li><b>Plan</b><span>Works back from tomorrow's schedule to set tonight's bedtime and wake-up time.</span></li><li><b>Own time</b><span>Keeps the last hour before bed free. No intervention.</span></li><li><b>Falling asleep</b><span>In bed but still awake: dims the light step by step, switches to a sleep sound and sends one reminder.</span></li><li><b>Night</b><span>Masks outside noise and gives a dim light if you get up.</span></li><li><b>Wake-up and review</b><span>Light and sound rise before the alarm; a morning check-in adjusts the next night.</span></li></ul>
     <p class="phase-note">Principles: no camera, sound analysed on the device and never recorded, and manual changes always win.</p>
   </section>
-  <figure class="wrap fig"><img src="img/somnera-fig6.jpg" alt="One night with Somnera: light and sound levels from 21:00 to 08:00, with eight numbered steps" style="background:#0e0f12" loading="lazy"><figcaption>One night, worked back from a 9 a.m. class. Illustrative curve, not measured values.</figcaption></figure>
+  <figure class="wrap fig"><img src="img/somnera-fig6.webp" alt="One night with Somnera: light and sound levels from 21:00 to 08:00, with eight numbered steps" style="background:#0e0f12" loading="lazy"><figcaption>One night, worked back from a 9 a.m. class. Illustrative curve, not measured values.</figcaption></figure>
   <section class="wrap read chap"><span class="mono">04 · Where it stands</span><h2>Defined and researched, testing under way</h2>
     <p>So far: the product definition, user and competitor research, light and sound defaults from published sleep research, and the hardware choice. As a first check, my teammate ran a published sleep model on a sample radar recording, and it told awake from asleep about 88% of the time before any tuning. Over the summer I began testing a radar board for presence in bed, turning over, breathing and heartbeat, with an app to log the actual states; that testing is not finished. Next we will talk to 5 to 10 students who stay up late and complete the awake-versus-asleep test. The goal by May 2027 is a working prototype, user testing and a first business model.</p>
   </section>
@@ -1132,7 +1138,7 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
     <h1>Tap Care</h1>
     <p class="sub">An NFC-based service for older adults: cards placed where a need arises let them call a taxi or book a home repair with a single tap of the phone.</p>
   </div>
-  <div class="band" style="background:#2a2c30"><img src="img/tapcare-band.jpg" alt="Tap Care app screens: choosing a service, starting a journey, setting a repair reminder" style="object-position:50% 45%" loading="lazy"></div>
+  <div class="band" style="background:#2a2c30"><img src="img/tapcare-band.webp" alt="Tap Care app screens: choosing a service, starting a journey, setting a repair reminder" style="object-position:50% 45%" loading="lazy"></div>
   <div class="wrap">
     <dl class="facts"><div><dt>My role</dt><dd>Solo project: research, service design, UI design and prototyping</dd></div><div><dt>Context</dt><dd>BA User Experience Design, UAL. Major graduation project</dd></div><div><dt>Methods</dt><dd>Task walkthrough, expert interview, paper prototypes, peer testing</dd></div><div><dt>Year</dt><dd>2025</dd></div></dl>
   </div>
@@ -1161,7 +1167,7 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
     <h1>Lumencord</h1>
     <p class="sub">An interactive pendant for people in long-distance relationships, designed so that pressing one lights up its pair far away.</p>
   </div>
-  <div class="band" style="background:#adadad"><img src="img/lumencord-band.jpg" alt="Rendered core module opened up: shell, battery, mainboard, button and wireless charging coil" style="object-position:50% 50%" loading="lazy"></div>
+  <div class="band" style="background:#adadad"><img src="img/lumencord-band.webp" alt="Rendered core module opened up: shell, battery, mainboard, button and wireless charging coil" style="object-position:50% 50%" loading="lazy"></div>
   <div class="wrap">
     <dl class="facts"><div><dt>My role</dt><dd>Solo project: research, concept, industrial design, 3D modeling and printing</dd></div><div><dt>Context</dt><dd>BA User Experience Design, UAL. Minor graduation project, on the Creative Conscience brief</dd></div><div><dt>Built with</dt><dd>3D modeling, resin 3D printing, hand-wrapped wire</dd></div><div><dt>Year</dt><dd>2025</dd></div></dl>
   </div>
@@ -1190,7 +1196,7 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
     <h1>Lezat</h1>
     <p class="sub">A service system and business model for a family restaurant in a flooded Jakarta of 2100, combining dine-in, pick-up and boat delivery through a single app.</p>
   </div>
-  <div class="band" style="background:#000e48"><img src="img/lezat-band.jpg" alt="Top view of the wooden restaurant model on a pier surrounded by blue water" loading="lazy"></div>
+  <div class="band" style="background:#000e48"><img src="img/lezat-band.webp" alt="Top view of the wooden restaurant model on a pier surrounded by blue water" loading="lazy"></div>
   <div class="wrap">
     <dl class="facts"><div><dt>My role</dt><dd>Solo project: research, service design, app UI and the physical model</dd></div><div><dt>Methods</dt><dd>Stakeholder map, service blueprint, How Might We, storyboard</dd></div><div><dt>Built with</dt><dd>Figma, laser-cut wood model, rendering</dd></div><div><dt>Year</dt><dd>2024</dd></div></dl>
   </div>
@@ -1219,7 +1225,7 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
     <h1>Lumibot</h1>
     <p class="sub">A small robot that moves potted plants into sunlight and returns them indoors once their light needs are met.</p>
   </div>
-  <div class="band" style="background:#e9e3d6"><img src="img/lumibot-band.jpg" alt="Lumibot carrying a potted plant in a bright room" style="object-position:50% 62%" loading="lazy"></div>
+  <div class="band" style="background:#e9e3d6"><img src="img/lumibot-band.webp" alt="Lumibot carrying a potted plant in a bright room" style="object-position:50% 62%" loading="lazy"></div>
   <div class="wrap">
     <dl class="facts"><div><dt>My role</dt><dd>Background research, hardware and code</dd></div><div><dt>Team</dt><dd>Tianyi (Lisa) Yang, Jiaqi (Helen) Wang (illustration)</dd></div><div><dt>Built with</dt><dd>Arduino, light sensors, motors, servo, Figma</dd></div><div><dt>Year</dt><dd>2024</dd></div></dl>
   </div>
@@ -1249,7 +1255,7 @@ html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.
     <h1>Signguage</h1>
     <p class="sub">A wearable communication system for deaf and hard-of-hearing people: gloves that convert sign language into speech, and glasses that convert speech into captions.</p>
   </div>
-  <div class="band" style="background:#e8e2da"><img src="img/signguage-band.jpg" alt="Two rendered figures talking in an office, one wearing the glove" style="object-position:50% 40%" loading="lazy"></div>
+  <div class="band" style="background:#e8e2da"><img src="img/signguage-band.webp" alt="Two rendered figures talking in an office, one wearing the glove" style="object-position:50% 40%" loading="lazy"></div>
   <div class="wrap">
     <dl class="facts"><div><dt>My role</dt><dd>Solo project: research, interviews, workshop, prototype and code</dd></div><div><dt>Methods</dt><dd>Interviews, personas, peer workshop, user testing</dd></div><div><dt>Built with</dt><dd>Arduino UNO, flex sensors, speaker, 3D rendering</dd></div><div><dt>Year</dt><dd>2024</dd></div></dl>
   </div>
@@ -1367,7 +1373,7 @@ pc.addEventListener('pointerleave',()=>{pm=null;phase()});}
 const decks={sprout:{title:'SPROUT',n:10},follower:{title:'FOLLOWER',n:12},phase:{title:'PHASE',n:14},tapcare:{title:'Tap Care',n:11},somnera:{title:'Somnera',n:9},benefitflow:{title:'BenefitFlow',n:12},lumencord:{title:'Lumencord',n:10},lezat:{title:'Lezat',n:8},lumibot:{title:'Lumibot',n:7},signguage:{title:'Signguage',n:7}};
 const V=document.getElementById('viewer'),vi=document.getElementById('v-img'),vc=document.getElementById('v-count'),vt=document.getElementById('v-title'),th=document.getElementById('v-thumbs');
 let deck=null,idx=0,lastFocus=null;
-const src=(d,i)=>`img/slide-${d}-${String(i+1).padStart(2,'0')}.jpg`;
+const src=(d,i)=>`img/slide-${d}-${String(i+1).padStart(2,'0')}.webp`;
 function show(i){idx=(i+deck.n)%deck.n;vi.src=src(deck.key,idx);vi.alt=`${deck.title} slide ${idx+1}`;vc.textContent=`${idx+1} / ${deck.n}`;
   [...th.children].forEach((b,j)=>b.classList.toggle('on',j===idx));th.children[idx].scrollIntoView({block:'nearest',inline:'center'});new Image().src=src(deck.key,(idx+1)%deck.n)}
 function open(key,at=0){deck={...decks[key],key};lastFocus=document.activeElement;vt.textContent=deck.title;th.innerHTML='';
