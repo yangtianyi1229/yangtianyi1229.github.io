@@ -663,7 +663,7 @@ html[lang="zh-CN"] :is(h1,h2,h3,h4,.big){font-family:"ZH Latin","Noto Serif SC",
 html[lang="zh-CN"] .hc-copy h4,html[lang="zh-CN"] .case-top h1{letter-spacing:-.02em}
 
 /* First screen: what she is looking for, and a few results */
-.hero{grid-template-rows:1fr auto}
+.hero{grid-template-rows:1fr}
 .hero .hint{display:none}
 .hero .avail{display:inline-flex;align-items:center;gap:9px;margin-bottom:22px;padding:7px 15px;border-radius:999px;background:rgba(255,255,255,.7);box-shadow:inset 0 0 0 1px var(--rule);font-size:13.5px;line-height:1.4;color:var(--ink-2);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);text-wrap:balance}
 .hero .avail i{flex:none;width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px color-mix(in srgb,var(--green) 18%,transparent)}
@@ -683,7 +683,7 @@ html[lang="zh-CN"] .hero .pf-t{max-width:17em}
 .hero .sub{margin-top:26px}
 .hero .meta{margin-top:22px;opacity:.85}
 .hero .ctas{margin-top:34px}
-.hero .copy{padding-bottom:72px}
+.hero .copy{padding-bottom:40px}
 .hero .proof{padding-top:26px}
 @media (max-width:860px){.hero .avail{margin-bottom:24px}.hero .copy{padding-bottom:40px}}
 @media (min-width:861px) and (max-height:820px){.hero{height:auto;min-height:calc(100vh - 52px)}.hero .copy{padding-top:32px;padding-bottom:52px}.hero .avail{margin-bottom:22px}.hero .ctas{margin-top:28px}}
@@ -711,12 +711,6 @@ html[lang="zh-CN"] .hero .pf-t{max-width:17em}
       <div class="ctas"><a class="pill primary" href="#work">See my work</a><button class="pill ghost" id="copy" type="button">Copy email</button></div>
     </div>
     <span class="hint mono" aria-hidden="true"><i></i>Move or press anywhere</span>
-    <div class="proof">
-      <div><p class="pf-n">~400K</p><p class="pf-t">HP laptops a year ship with the support client I helped redesign</p></div>
-      <div><p class="pf-n">3</p><p class="pf-t">residential developments put our smart-home terminal in their show units</p></div>
-      <div><p class="pf-n">500+ → 4</p><p class="pf-t">in-network therapists left after filtering for one realistic patient</p></div>
-      <div><p class="pf-n">2022</p><p class="pf-t">Contemporary Good Design Award for the terminal my IKD team designed</p></div>
-    </div>
   </header>
 
   <div class="sheet s1"><div class="wrap">
@@ -1586,6 +1580,7 @@ document.getElementById('lang')?.addEventListener('click',()=>set(cur==='zh'?'en
 let start='en';try{start=new URLSearchParams(location.search).get('lang')||localStorage.getItem('lang')||'en'}catch(_){}
 if(start==='zh')set('zh');})();
 </script>
+
 
 
 
